@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">
+	
+	function fu(){
+ 	     var man=
+        	   {
+       		        firstname: "sai",
+      		        lastname: "teja",
+     		        age: "21", 
+     		        fullname: function()
+     		        {
+        		       return this.firstname+" "+this.lastname+" "+this.age;
+      		        }
+        	  };
+	 document.getElementById("id1").innerHTML=man.fullname();
+	}
+	
+
+	
+	</script>
+  </head>
+  <body>
+    <p id="id1">not changed paragraph</p>
+    <button type="button" onclick="fu()">Check it</button>  
+  </body>
+</html>
