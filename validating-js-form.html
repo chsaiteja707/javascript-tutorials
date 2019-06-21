@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <script type="text/javascript">
+	function fun()
+	{
+	  var x=document.getElementById("id3").value;
+	  if(x>100 && x<300)
+ 	   document.getElementById("id1").innerHTML="Valid Number";
+	  else
+ 	   document.getElementById("id1").innerHTML="Invalid Number";
+	}
+
+    </script>
+  </head>
+  
+   <body>
+    <p id="id1">choose number between 100 and 300</p>
+	<input id="id3" type="number" min="100" max="300">
+     <button onclick="fun()">submit</button>   
+  </body>
+</html>
+
+
+
+
