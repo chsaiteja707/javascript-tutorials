@@ -1,0 +1,53 @@
+<!--	using call	-->
+
+<html>
+  <head>
+    <script type="text/javascript">
+	function fun()
+	{
+	 	 var man1={fname:"sai", lname:"teja", age:"21"}
+ 		 var man2={fname:"kiran", lname:"kumar", age:"22"}
+	  	 var man={
+	    		details: function(city, country){
+	    		  document.write(this.fname+" "+this.lname+" "+this.age+" "+city+" "+country+"\n");
+	    
+	   	 	}
+  		}
+ 	 	man.details.call(man1, "chennai", "India");  
+ 	 	man.details.call(man2, "hyderabad", "India");     
+	}
+    </script>
+  </head>
+    
+   <body>
+     <button onclick="fun()">click</button>
+  </body>
+</html>
+
+----------------------------------------------------------------------------------------
+
+<!--	using apply	-->
+
+<html>
+  <head>
+    <script type="text/javascript">
+	function fun()
+	{
+	 	 var man1={fname:"sai", lname:"teja", age:"21"}
+ 		 var man2={fname:"kiran", lname:"kumar", age:"22"}
+	  	 var man={
+	    		details: function(city, country){
+	    		  document.write(this.fname+" "+this.lname+" "+this.age+" "+city+" "+country+"\n");
+	    
+	   	 	}
+  		}
+ 	 	man.details.apply(man1, ["chennai", "India"]);  
+ 	 	man.details.apply(man2, ["hyderabad", "India"]);     
+	}
+    </script>
+  </head>
+    
+   <body>
+     <button onclick="fun()">click</button>
+  </body>
+</html>
