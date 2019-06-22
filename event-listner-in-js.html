@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>  
+  <head>
+   
+  </head>
+  <body>  
+    <button id="btn">click me</button>
+    <p id="id1">Hai</p>
+
+	<!-- script tag has to be placed at the end of the body -->
+    <script>
+        var x=document.getElementById("btn");
+	x.addEventListener("click", myfunction1);
+	x.addEventListener("mouseover", myfunction2);
+	x.addEventListener("mouseout", myfunction3);
+	function myfunction1(){
+ 	 document.getElementById("id1").innerHTML+="clicked<br>";
+	}
+
+	function myfunction2(){
+ 	 document.getElementById("id1").innerHTML+="over the button<br>";
+	}
+
+	function myfunction3(){
+	  document.getElementById("id1").innerHTML+="away from the button<br>";
+	}
+    
+    </script>
+  </body>
+</html>
