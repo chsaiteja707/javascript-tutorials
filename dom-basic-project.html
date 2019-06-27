@@ -1,0 +1,83 @@
+<html>
+	<head>	
+	<style>
+		body {
+ 			background-image: url("https://images.unsplash.com/photo-1466065665758-d473db752253?ixlib=rb-		1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80");
+ 		
+		}
+		.win{
+			color:green
+		}
+		.normal{
+			color:black
+		}
+	</style>		
+	</head>
+ <body>
+	<h1><span id="p1project">0</span> to <span id="p2project">0</span></h1>
+	<p>playing to :<span id=change>0</span></p>
+	<input type="number">
+	<button id="pl1">player one</button>
+	<button id="pl2">player two</button>
+	<button id="rst">Reset</button>
+ </body>
+
+<!--scripting elements-->
+<script type="text/javascript">
+		var p1=document.getElementById("pl1");
+		var p2=document.getElementById("pl2");
+		var rst=document.getElementById("rst");
+		var p1pro=document.querySelector("#p1project");
+		//remember to keep # for id using query selector
+		var p2pro=document.querySelector("#p2project");
+		var total=document.querySelector("#total");
+		var inp=document.querySelector("input[type='number']");
+		var para=document.querySelector("p");
+		var change=document.querySelector("#change");
+		var p1score=0;
+		var p2score=0;
+		var gameOver=false;
+		var winningScore=inp.value;
+		p1.addEventListener("click",function(){
+			if(!gameOver){
+			p1score++;
+
+			if(p1score===winningScore){	
+			p1pro.classList.add("win");
+			 gameOver=true;	
+			}
+			p1pro.textContent=p1score;
+			}	
+    			});
+		p2.addEventListener("click",function(){
+
+			if(!gameOver){
+			p2score++;
+			if(p2score===winningScore){
+			p2pro.classList.add("win");
+			gameOver=true;
+			}
+			p2pro.textContent=p2score;
+			}
+    			});
+		rst.addEventListener("click",function(){
+				reset();
+    			});
+		function reset(){
+			p1score=0;
+			p2score=0;
+			p1pro.textContent=0;
+			p2pro.textContent=0;
+			p1pro.classList.remove("win");
+			p2pro.classList.remove("win");
+			gameOver=false;
+		}
+		inp.addEventListener("change", function(){
+			change.textContent=this.value;
+			winningScore=Number(this.value);
+			reset();
+			});
+	
+			
+</script>
+</html>
